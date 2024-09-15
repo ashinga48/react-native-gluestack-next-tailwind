@@ -4,7 +4,9 @@ import { SplashScreen } from "@/screens/auth/splash-screen";
 const Page = () => {
 
   return (
+    <>
     <SplashScreen />
+    </>
   );
 };
 

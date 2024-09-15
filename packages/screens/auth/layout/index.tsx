@@ -1,4 +1,9 @@
-import { HStack, VStack, SafeAreaView, ScrollView, Image } from "@/components/gluestack-base"
+import { VStack } from "@/components/ui/vstack";
+import { HStack } from "@/components/ui/hstack";
+import { SafeAreaView } from "@/components/ui/safe-area-view";
+import { ScrollView } from "@/components/ui/scroll-view";
+import { Image } from "@/components/ui/image";
+
 
 type AuthLayoutProps = {
   children: React.ReactNode;

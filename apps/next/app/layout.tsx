@@ -2,7 +2,7 @@
 
 import { Inter } from "next/font/google";
 import StyledJsxRegistry from "./registry";
-import { GluestackUIProvider, GluestackConfig } from "@/components/gluestack-base";
+import { GluestackUIProvider } from "@/components/gluestack-ui-provider/index.web";
 
 const inter = Inter({ subsets: ["latin"] });
 export default function RootLayout({
@@ -14,7 +14,7 @@ export default function RootLayout({
     <html lang="en" className="gs gs-dark">
       <body className={inter.className} style={{ display: "flex" }}>
         <StyledJsxRegistry>
-          <GluestackUIProvider config={GluestackConfig}>{children}</GluestackUIProvider>
+          <GluestackUIProvider mode="light" >{children}</GluestackUIProvider>
         </StyledJsxRegistry>
       </body>
     </html>

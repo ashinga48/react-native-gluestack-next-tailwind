@@ -1,6 +1,9 @@
+
+const gluestackPlugin = require('@gluestack-ui/nativewind-utils/tailwind-plugin');
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: "media",
+  darkMode: process.env.DARK_MODE ? process.env.DARK_MODE : 'media',
   content: [
     "./app/**/*.{js,jsx,ts,tsx}",
     "./components/*.{js,jsx,ts,tsx,mdx}",
@@ -196,6 +199,8 @@ module.exports = {
         'soft-4': '0px 0px 40px rgba(38, 38, 38, 0.1)',
       },
     },
-    plugins: [],
   },
+  plugins: [gluestackPlugin],
 };
+
+ 

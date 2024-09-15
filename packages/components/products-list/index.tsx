@@ -1,4 +1,3 @@
-import { Button, ButtonText, HStack, VStack, Icon } from "@gluestack-ui/themed"
 import { Product } from "../product";
 
 interface IProduct {

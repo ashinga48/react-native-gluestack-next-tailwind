@@ -1,6 +1,9 @@
-import { Button, ButtonText, VStack, Icon } from "@/components/gluestack-base"
+// import { Button, ButtonText, VStack, Icon } from "@/components/gluestack-base"
 
-import { GluestackIcon } from "@/components/gluestack-base";
+import { Button, ButtonText } from "@/components/ui/button";
+import { VStack } from "@/components/ui/vstack";
+// import { Heading } from "@/components/ui/heading";
+
 import useRouter from "@unitools/router";
 import { AuthLayout } from "../layout";
 

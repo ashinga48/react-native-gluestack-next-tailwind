@@ -52,6 +52,7 @@
     "@gluestack-ui/themed": "^1.1.32",
     "@gluestack-ui/toast": "latest",
     "@gluestack-ui/tooltip": "latest",
+    "@gorhom/bottom-sheet": "^4.6.4",
     "@legendapp/motion": "latest",
     "@unitools/image": "^0.0.4",
     "expo-image": "^1.12.9",

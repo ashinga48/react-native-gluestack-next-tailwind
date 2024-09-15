@@ -1,5 +1,6 @@
 // import "@/global.css";
-import { GluestackConfig, GluestackUIProvider } from "@/components/gluestack-base";
+// import { GluestackConfig, GluestackUIProvider } from "@/components/gluestack-base";
+import { GluestackUIProvider } from "@/components/gluestack-ui-provider";
 import { useFonts } from 'expo-font';
 import { Stack } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
@@ -29,7 +30,7 @@ export default function RootLayout() {
   }
 
   return (
-    <GluestackUIProvider config={GluestackConfig} >
+    <GluestackUIProvider >
       <Stack>
         <Stack.Screen name="index" options={{
           title: 'Products',
