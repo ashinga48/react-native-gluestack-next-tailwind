@@ -2,7 +2,7 @@ import { Button, ButtonText, SafeAreaView, VStack } from "@/components/gluestack
 
 import { ProductsScreen } from "@/screens/products"
 
-export default function TabTwoScreen() {
+export default function Products() {
   return (
     <SafeAreaView >
       <ProductsScreen />

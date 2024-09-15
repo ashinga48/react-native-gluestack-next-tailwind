@@ -301,6 +301,18 @@ export const config = {
     "--color-background-muted": "51 51 51",
     "--color-background-info": "26 40 46",
 
+    /* Violet */
+    "--color-violet-50": "197 197 248",
+    "--color-violet-100": "165 164 241",
+    "--color-violet-200": "136 134 231",
+    "--color-violet-300": "108 106 219",
+    "--color-violet-400": "79 76 212",
+    "--color-violet-500": "65 63 199",
+    "--color-violet-600": "63 61 178",
+    "--color-violet-700": "63 61 154",
+    "--color-violet-800": "61 60 131",
+    "--color-violet-900": "59 58 110",
+
     /* Focus Ring Indicator  */
     "--color-indicator-primary": "247 247 247",
     "--color-indicator-info": "161 199 245",

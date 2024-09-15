@@ -287,6 +287,17 @@ export const config = {
         "--color-background-success": "#1C2B21",
         "--color-background-muted": "#252526",
         "--color-background-info": "#1A282E",
+        /* Violet */
+        "--color-violet-50": "197 197 248",
+        "--color-violet-100": "165 164 241",
+        "--color-violet-200": "136 134 231",
+        "--color-violet-300": "108 106 219",
+        "--color-violet-400": "79 76 212",
+        "--color-violet-500": "65 63 199",
+        "--color-violet-600": "63 61 178",
+        "--color-violet-700": "63 61 154",
+        "--color-violet-800": "61 60 131",
+        "--color-violet-900": "59 58 110",
         /* Border */
         "--color-border-0": "#1A1717",
         "--color-border-50": "#272624",

@@ -1,11 +1,11 @@
 "use client";
-import { SplashScreen } from "@/screens/auth/splash-screen";
+import { ProductsScreen } from "@/screens/products"
 
 const Page = () => {
 
   return (
     <>
-    <SplashScreen />
+    <ProductsScreen />
     </>
   );
 };
