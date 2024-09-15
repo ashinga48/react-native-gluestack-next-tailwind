@@ -1,0 +1,37 @@
+{
+  "private": true,
+  "name": "shell-app",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "resolutions": {
+    "react-native-reanimated": "3.10.1"
+  },
+  "scripts": {
+    "comp": "pnpm --filter @/components",
+    "expo": "pnpm --filter expo-app",
+    "next": "pnpm --filter next-app",
+    "cf": "pnpm workspace functions",
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "run:expo": "cd apps/expo-app && pnpm start",
+    "run:next": "cd apps/next && pnpm dev",
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\" --ignore-path .gitignore",
+    "eject": "npx @gluestack-ui/universal-cli@latest eject",
+    "clean:expo": "cd apps/expo-app && rm -rf .expo",
+    "clean:next": "cd apps/next && rm -rf .next",
+    "clean:turbo": "turbo run clean",
+    "clean": "rm -rf node_modules && rm -rf .turbo && pnpm -r exec rm -rf node_modules && pnpm clean:expo && pnpm clean:next",
+    "postinstall": "patch-package"
+  },
+  "devDependencies": {
+    "prettier": "^3.1.1",
+    "turbo": "latest",
+    "patch-package": "latest"
+  },
+  "packageManager": "pnpm@9.1.1",
+  "engines": {
+    "node": ">=18"
+  }
+}
