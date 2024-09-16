@@ -1,17 +1,20 @@
 import { ProductCard, ProductType } from "../product";
 import { Grid, GridItem } from "../ui/grid"
 import { ScrollView } from "../ui/scroll-view"
+import { Pressable } from "../ui/pressable"
 import { Box } from "../ui/box"
 
 
 export const ProductsList = ({
-    products = []
+    products = [],
+    onPressItem = () => {}
 }: {
     products: ProductType[];
+    onPressItem: (d: ProductType) => void
 }) => {
   return (
     <ScrollView>
-      <Box className="mb-12">
+      <Box className="mb-[300px]">
       <Grid
         className="gap-0"
         _extra={{
@@ -24,8 +27,11 @@ export const ProductsList = ({
             _extra={{
               className: "col-span-3",
             }}
+            key={`eachProduct-${eachProduct.id}`}
           >
-            <ProductCard data={eachProduct} />
+            <Pressable onPress={() => onPressItem(eachProduct)}>
+              <ProductCard data={eachProduct} />
+            </Pressable>
           </GridItem>
         ))}
       </Grid>

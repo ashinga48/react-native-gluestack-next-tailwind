@@ -1,37 +1,46 @@
-import { VStack } from "@/components/gluestack-base"
+import useRouter from "@unitools/router";
 import { ProductsList } from "@/components/product-list"
 import { ProductFilterButton, ProductFilterSheet } from "@/components/product-list-filter"
-import { CategoryList } from "@/components/product-category-list"
 import { useState } from "react"
+import { ProductType, PRODUCT_SORT_OPTION, PRODUCT_SORT_OPTION_LABELS } from "@/components/product";
 
-const CATEGORY_LIST = [
-  'All',
-  "Men's Clothing",
-  "Jewelery"
-]
 
-export const ProductsScreen = () => {
+export const ProductSortFilter = ({ updateFilter = (d: PRODUCT_SORT_OPTION) => {console.log(d)} }) => {
+  
   const [showActionsheet, setShowActionsheet] = useState(false)
   const handleClose = () => setShowActionsheet(false)
+  
+  const onSortBySelected = ((selectedOption: string) => {
+    setShowActionsheet(false)
+    updateFilter(selectedOption as unknown as PRODUCT_SORT_OPTION)
+  })
 
   return (
-    <VStack>
-      <CategoryList data={[
-        ...CATEGORY_LIST,
-        ...CATEGORY_LIST,
-        ...CATEGORY_LIST,
-        ...CATEGORY_LIST,
-      ]} />
+    <>
       <ProductFilterButton title="Sort by..." onPress={() => setShowActionsheet(true)} />
-      <ProductFilterSheet options={[]} isOpen={showActionsheet} onClose={handleClose} />
-      <ProductsList products={
-        [
-          ...CATEGORY_LIST,
-          ...(new Array(19).fill({
-          title: 'item '
-          }))
-        ]
-      } />
-    </VStack>
+      <ProductFilterSheet
+        options={PRODUCT_SORT_OPTION_LABELS}
+        onPressItem={onSortBySelected}
+        isOpen={showActionsheet}
+        onClose={handleClose} 
+        />
+    </>
+  )
+}
+
+export const ProductsScreen = (
+  { products = []}: 
+  { products: ProductType[] }) => {
+  const router = useRouter();
+
+  const onPressItem = (product: ProductType) => {
+    console.log(`product id ${product.id}`)
+    router.push("/product/"+product.id)
+  }
+
+  return (
+    <ProductsList products={
+      products
+    } onPressItem={onPressItem} />
   );
 };

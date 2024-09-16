@@ -4,9 +4,7 @@ import { ProductsScreen } from "@/screens/products"
 const Page = () => {
 
   return (
-    <>
     <ProductsScreen />
-    </>
   );
 };
 

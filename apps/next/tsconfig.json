@@ -20,6 +20,7 @@
     "baseUrl": ".",
     "paths": {
       "@/assets/*": ["../../packages/shared/assets/*", "./public/assets/*"],
+      "@/shared/*": ["../../packages/shared/*"],
       "@/*": ["./*"],
       "@unitools/router": ["node_modules/@unitools/router-next"],
       "@unitools/link": ["node_modules/@unitools/link-next"]

@@ -7,9 +7,11 @@ import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from 'react';
 import 'react-native-reanimated';
 
-import "../global.css";
+import { Provider } from 'react-redux';
+import { store } from '@/shared/store/store'
 
-// import { useColorScheme } from '@app/hooks/useColorScheme';
+import "../global.css";
+import { CartButtonWithData } from "./cart";
 
 // Prevent the splash screen from au`to-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
@@ -30,14 +32,26 @@ export default function RootLayout() {
   }
 
   return (
+    <Provider store={store}>
     <GluestackUIProvider >
       <Stack>
+        
         <Stack.Screen name="index" options={{
           title: 'Products',
+          headerRight: () => <CartButtonWithData />,
+        }} />
+        <Stack.Screen name="product/[pid]" options={{
+          title: 'Product Description',
+          headerRight: () => <CartButtonWithData />,
+        }} />
+        <Stack.Screen name="cart" options={{
+          title: 'Cart',
+          headerRight: () => <CartButtonWithData />,
         }} />
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
         <Stack.Screen name="+not-found" />
       </Stack>
     </GluestackUIProvider>
+    </Provider>
   );
 }

@@ -16,6 +16,9 @@
       "@/assets/*": [
         "../../packages/shared/assets/*",
         "./assets/*"
+      ],
+      "@/shared/*": [
+        "../../packages/shared/*",
       ]
     }
   },

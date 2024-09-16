@@ -19,16 +19,17 @@ export const ProductFilterButton = ({ title = `Sort by...`, onPress = () => {} }
   );
 };
 
-export const ProductFilterSheet = ({ options = [], isOpen = false, onClose = () => {}, onPressItem = () => {} }) => {
+export const ProductFilterSheet = ({ options, isOpen = false, onClose = () => {}, onPressItem = () => {} }:
+{ options: any, isOpen: boolean, onClose: () => void, onPressItem: (d: string) => void }) => {
   return (
     <Actionsheet isOpen={isOpen} onClose={onClose}>
     <ActionsheetBackdrop />
     <ActionsheetContent>
-      <ActionsheetItem onPress={onPressItem}>
+      {Object.keys(options).map(eachOptionKey => <ActionsheetItem onPress={()=> onPressItem(eachOptionKey)}>
         <ActionsheetItemText>
-        Sample 1
+          {`${options?.[eachOptionKey]}`}
         </ActionsheetItemText>
-      </ActionsheetItem>
+      </ActionsheetItem>)}
     </ActionsheetContent>
   </Actionsheet>
   );
