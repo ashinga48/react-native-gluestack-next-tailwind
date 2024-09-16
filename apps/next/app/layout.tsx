@@ -15,7 +15,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="gs gs-dark">
-      <body className={inter.className} style={{ display: "flex" }}>
+      <body className={inter.className} style={{ display: "block" }}>
         <StyledJsxRegistry>
           <GluestackUIProvider mode="light" >
             <Provider store={store}>
