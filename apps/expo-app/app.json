@@ -38,9 +38,9 @@
       "router": {
         "origin": false
       },
-      // "eas": {
-      //   "projectId": "148098d1-7e19-4326-9814-dd661a192776"
-      // }
+      "eas": {
+        "projectId": "c0c5bcd9-e3ab-4482-bb08-0649132c43d8"
+      }
     },
     "experiments": {
       "typedRoutes": true
